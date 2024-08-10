@@ -1,0 +1,5 @@
+docker container run -d --name webhost -p 80:80 nginx
+docker container run -d --name database -p 3306:3306 -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
+docker container run -d --name apache -p 8080:80 httpd
+docker container logs database
+docker container rm -f webhost database apache
