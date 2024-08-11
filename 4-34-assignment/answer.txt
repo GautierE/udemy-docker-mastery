@@ -1,0 +1,7 @@
+docker network create my_app
+docker container run -d --network-alias search --network my_app --name elastic1 bretfisher/httpenv
+docker container run -d --network-alias search --network my_app --name elastic2 bretfisher/httpenv
+
+docker container run --rm -it --network my_app  alpine
+nslookup search
+apk add curl
