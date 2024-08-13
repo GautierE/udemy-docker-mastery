@@ -1,0 +1,2 @@
+docker image build -t mynode .
+docker container run --name mynodeapp -p 80:3000 mynode
